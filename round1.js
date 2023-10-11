@@ -16,6 +16,16 @@ console.log(max)
 var questionAnswerId = getRandomInt(max);
 question.innerHTML = data[questionAnswerId][0];
 
+var answer = document.getElementById("round-1")
+document.getElementById("round-1").addEventListener('keyup', (e) => {
+    if (e.target.value.toLowerCase() == data[questionAnswerId][1].toLowerCase() ) {
+        console.log(e.target.value)
+        document.querySelector('#submit').style.display = 'block';
+    }
+    else {
+        document.querySelector('#submit').style.display = 'none';
+    }
+})
 
 
 document.getElementById('submit').addEventListener('click', (e) => {
@@ -23,7 +33,7 @@ document.getElementById('submit').addEventListener('click', (e) => {
     var answer = document.getElementById("round-1").value;
     if ( answer == data[questionAnswerId][1]) {
         setTimeout(3000, alert("Congratulations, you have completed the first round"))
-        window.location.replace("")
+        window.location.replace("round2.html")
     } else {
         incorrect.innerHTML = 'Incorrect answer';
     }
