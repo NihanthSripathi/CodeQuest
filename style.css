@@ -13,6 +13,7 @@ body{
     justify-content: space-around;
     align-items: center;
     margin-bottom: 3%;
+    padding-top: 5px;
 }
 .vbit-logo{
     width: 250px;
@@ -21,34 +22,33 @@ body{
     margin-right: 10%;
 }
 .sb-logo{
-    width: 90px;
+    width: 80px;
 }
 .q1{
     margin: auto;
-    width: 500px;
     font-size: 45px;
-    background-color: rgba(236, 237, 226, 0.8);
+    background-color: rgb(161 150 226 / 60%);
     padding: 5px 10px;
     width: fit-content;
-    border-radius: 50px;
+    border-radius: 30px;
 }
 #description{
     font-size: 18px;
 }
 .qst-1{
-    background-color: rgba(236, 237, 226, 0.8);
+    background-color: rgb(161 150 226 / 60%);
     padding: 20px;
     width: 50%;
     text-align: center;
     font-size: 22px;
-    border-radius: 50px;
+    border-radius: 30px;
     height: fit-content;
     margin: 0.5% auto;
 }
 input{
     border: black solid 2px;
     height: 60px;
-    background-color: rgba(236, 237, 226, 0.8);
+    background-color: rgb(161 150 226 / 60%);
     width: 300px;
     padding: 20px;
     font-size: 22px;
