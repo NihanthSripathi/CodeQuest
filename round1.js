@@ -12,7 +12,6 @@ function getRandomInt(max) {
 var question = document.getElementById("round1");
 var incorrect = document.getElementById('incorrect');
 var max = Object.keys(data).length;
-console.log(max)
 var questionAnswerId = getRandomInt(max);
 question.innerHTML = data[questionAnswerId][0];
 

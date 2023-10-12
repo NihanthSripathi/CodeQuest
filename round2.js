@@ -12,7 +12,6 @@ function getRandomInt(max) {
 var question = document.getElementById("round2");
 var incorrect = document.getElementById('incorrect');
 var max = Object.keys(data).length;
-console.log(max)
 var questionAnswerId = getRandomInt(max);
 question.innerHTML = data[questionAnswerId][0];
 
@@ -32,7 +31,7 @@ document.getElementById('submit').addEventListener('click', (e) => {
     e.preventDefault();
     var answer = document.getElementById("round-2").value;
     if ( answer == data[questionAnswerId][1]) {
-        setTimeout(3000, alert("Congratulations, you have completed the first round"))
+        setTimeout(3000, alert("Congratulations, you have completed the secord round"))
         window.location.replace("round3.html")
     } else {
         incorrect.innerHTML = 'Incorrect answer';
