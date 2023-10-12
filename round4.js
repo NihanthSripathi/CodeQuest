@@ -13,12 +13,11 @@ var question = document.getElementById("round4");
 var incorrect = document.getElementById('incorrect');
 var max = Object.keys(data).length;
 var questionAnswerId = getRandomInt(max);
-question.innerHTML = data[questionAnswerId][0];
+question.innerHTML = data[3][questionAnswerId][0];
 
 var answer = document.getElementById("round-4")
 document.getElementById("round-4").addEventListener('keyup', (e) => {
-    if (e.target.value.toLowerCase() == data[questionAnswerId][1].toLowerCase() ) {
-        console.log(e.target.value)
+    if (e.target.value.toLowerCase() == data[3][questionAnswerId][1].toLowerCase() ) {
         document.querySelector('#submit').style.display = 'block';
     }
     else {
@@ -30,7 +29,7 @@ document.getElementById("round-4").addEventListener('keyup', (e) => {
 document.getElementById('submit').addEventListener('click', (e) => {
     e.preventDefault();
     var answer = document.getElementById("round-4").value;
-    if ( answer == data[questionAnswerId][1]) {
+    if ( answer == data[3][questionAnswerId][1]) {
         setTimeout(3000, alert("Congratulations, you have completed the forth round"))
         window.location.replace("")
     } else {

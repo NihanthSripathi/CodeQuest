@@ -1,11 +1,3 @@
-const data = {
-    0 : ["Enter your name" , "ganesh"],
-    1 : ["Enter your gender?", "male"],
-    2 : ["Age?" , "48"],
-    3 : ["Class","vbit"],
-    4 : ["something","everything"]
-}
-
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
@@ -13,12 +5,11 @@ var question = document.getElementById("round1");
 var incorrect = document.getElementById('incorrect');
 var max = Object.keys(data).length;
 var questionAnswerId = getRandomInt(max);
-question.innerHTML = data[questionAnswerId][0];
+question.innerHTML = data[0][questionAnswerId][0];
 
 var answer = document.getElementById("round-1")
 document.getElementById("round-1").addEventListener('keyup', (e) => {
-    if (e.target.value.toLowerCase() == data[questionAnswerId][1].toLowerCase() ) {
-        console.log(e.target.value)
+    if (e.target.value.toLowerCase() == data[0][questionAnswerId][1].toLowerCase() ) {
         document.querySelector('#submit').style.display = 'block';
     }
     else {
@@ -30,7 +21,7 @@ document.getElementById("round-1").addEventListener('keyup', (e) => {
 document.getElementById('submit').addEventListener('click', (e) => {
     e.preventDefault();
     var answer = document.getElementById("round-1").value;
-    if ( answer == data[questionAnswerId][1]) {
+    if ( answer == data[0][questionAnswerId][1]) {
         setTimeout(3000, alert("Congratulations, you have completed the first round"))
         window.location.replace("round2.html")
     } else {
