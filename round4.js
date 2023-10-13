@@ -27,7 +27,7 @@ async function getDataFromFirestore() {
         e.preventDefault();
         var answer = document.getElementById("round-4").value;
         if ( answer.toLowerCase() == dataArray[questionAnswerId]['answer'].toLowerCase()) {
-            setTimeout(3000, alert("Congratulations, you have completed the first round"))
+            setTimeout(3000, alert("Congratulations, you have completed the fourth round"))
             window.location.replace("")
         } else {
             incorrect.innerHTML = 'Incorrect answer';
