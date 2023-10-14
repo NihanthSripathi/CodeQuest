@@ -20,14 +20,14 @@ body{
     padding-top: 2%;
 }
 .logo-container img{
-    width: 100px;
+    width: 9%;
 }
 .vbit-logo{
-    width: 250px!important;
+    width: 15%!important;
 }
 .cs-logo{
-    width: 200px!important;
-    margin-right: 7%;
+    width: 13%!important;
+    margin-right: 3%;
 }
 /* .sb-logo{
     width: 80px;
@@ -112,4 +112,30 @@ p{
     color: red;
     font-size: medium;
     text-align: center;
+}
+
+@media screen and (max-width: 426px) and (min-width: 319px){
+
+    .vbit-logo{
+        width: 160px!important;
+    }
+    .cs-logo{
+        width: 105px!important;
+        margin-right: 4%;
+    }
+    .logo-container img{
+        width: 60px;
+    }
+    .question-container {
+        width: 95%;
+    }
+    .qst-1 {
+        width: 100%;
+    }
+
+}
+@media screen and (max-width: 768px) and (min-width: 426px){
+    .question-container {
+        width: 95%;
+    }
 }
