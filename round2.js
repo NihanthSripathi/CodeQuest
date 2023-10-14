@@ -27,7 +27,6 @@ function getRandomInt(max) {
         r2a : dataArray[questionAnswerId]["answer"]
       })
       
-      console.log(dataArray[questionAnswerId]["question"], dataArray[questionAnswerId]["answer"])
       qst.innerHTML = dataArray[questionAnswerId]["question"];
   
       document.getElementById("round-2").addEventListener("keyup", (e) => {
@@ -100,7 +99,6 @@ function getRandomInt(max) {
       });
     }
   
-    console.log(localStorage.getItem("userId"));
   }
   getDataFromFirestore();
   

@@ -24,11 +24,8 @@ async function getDataFromFirestore() {
         r1a : dataArray[questionAnswerId]["answer"]
       })
       .then((userId) => {
-        console.log(userId.id);
         localStorage.setItem("userId", userId.id);
       });
-    
-    console.log(dataArray[questionAnswerId]["question"], dataArray[questionAnswerId]["answer"])
     qst.innerHTML = dataArray[questionAnswerId]["question"];
 
     document.getElementById("round-1").addEventListener("keyup", (e) => {
@@ -100,7 +97,5 @@ async function getDataFromFirestore() {
       }
     });
   }
-
-  console.log(localStorage.getItem("userId"));
 }
 getDataFromFirestore();

@@ -26,8 +26,6 @@ function getRandomInt(max) {
         r3q : dataArray[questionAnswerId]["question"],
         r3a : dataArray[questionAnswerId]["answer"]
       })
-      
-      console.log(dataArray[questionAnswerId]["question"], dataArray[questionAnswerId]["answer"])
       qst.innerHTML = dataArray[questionAnswerId]["question"];
   
       document.getElementById("round-3").addEventListener("keyup", (e) => {
@@ -99,8 +97,6 @@ function getRandomInt(max) {
         }
       });
     }
-  
-    console.log(localStorage.getItem("userId"));
   }
   getDataFromFirestore();
   
