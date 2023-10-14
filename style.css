@@ -117,14 +117,14 @@ p{
 @media screen and (max-width: 426px) and (min-width: 319px){
 
     .vbit-logo{
-        width: 160px!important;
+        width: 120px!important;
     }
     .cs-logo{
-        width: 105px!important;
+        width: 90px!important;
         margin-right: 4%;
     }
     .logo-container img{
-        width: 60px;
+        width: 40px;
     }
     .question-container {
         width: 95%;
