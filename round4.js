@@ -15,7 +15,7 @@ function getRandomInt(max) {
   
     if (userData.round == 3) {
   
-      const querySnapshot = await db.collection("data").get();
+      const querySnapshot = await db.collection("data4").get();
       const dataArray = querySnapshot.docs.map((doc) => doc.data());
       const questionAnswerId = getRandomInt(dataArray.length);
   

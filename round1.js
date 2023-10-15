@@ -12,7 +12,7 @@ async function getDataFromFirestore() {
 
   if (localStorage.getItem("userId") == null) {
 
-    const querySnapshot = await db.collection("data").get();
+    const querySnapshot = await db.collection("data1").get();
     const dataArray = querySnapshot.docs.map((doc) => doc.data());
     const questionAnswerId = getRandomInt(dataArray.length);
 
