@@ -127,15 +127,31 @@ p{
         width: 40px;
     }
     .question-container {
-        width: 95%;
+        width: 90%;
     }
     .qst-1 {
         width: 100%;
     }
 
+
+
 }
 @media screen and (max-width: 768px) and (min-width: 426px){
     .question-container {
-        width: 95%;
+        width: 90%;
     }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  body {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+ .question-container {
+        width: 95%;
+        margin: 0 auto;
+    }
+
 }
