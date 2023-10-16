@@ -49,7 +49,7 @@ function getRandomInt(max) {
             3000,
             alert("Congratulations, you have completed the forth round")
           );
-          window.location.replace("index.html");
+          window.location.replace("https://www.hackerrank.com/contests/codequest-by-ieee-vbit-sb/challenges");
         } else {
           incorrect.innerHTML = "Incorrect answer";
         }
@@ -91,7 +91,7 @@ function getRandomInt(max) {
             3000,
             alert("Congratulations, you have completed the fourth round")
           );
-          window.location.replace("index.html");
+          window.location.replace("https://www.hackerrank.com/contests/codequest-by-ieee-vbit-sb/challenges");
         } else {
           incorrect.innerHTML = "Incorrect answer";
         }
