@@ -49,7 +49,7 @@ async function getDataFromFirestore() {
           3000,
           alert("Congratulations, you have completed the first round")
         );
-        window.location.replace("round2.html");
+        window.location.replace("round1b.html");
       } else {
         incorrect.innerHTML = "Incorrect answer";
       }
@@ -91,7 +91,7 @@ async function getDataFromFirestore() {
           3000,
           alert("Congratulations, you have completed the first round")
         );
-        window.location.replace("round2.html");
+        window.location.replace("round1b.html");
       } else {
         incorrect.innerHTML = "Incorrect answer";
       }

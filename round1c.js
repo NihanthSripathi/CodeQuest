@@ -2,8 +2,8 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
   
-  var qst = document.getElementById("round3");
-  var ans = document.getElementById("round-3");
+  var qst = document.getElementById("round1");
+  var ans = document.getElementById("round-1");
   var incorrect = document.getElementById("incorrect");
   
   async function getDataFromFirestore() {
@@ -13,22 +13,19 @@ function getRandomInt(max) {
     const userSnapshot = await userRef.get();
     const userData = userSnapshot.data();
   
-    if (userData.round == 2) {
+    if (userData.round == 1) {
   
-      const querySnapshot = await db.collection("data3").get();
+      const querySnapshot = await db.collection("data1c").get();
       const dataArray = querySnapshot.docs.map((doc) => doc.data());
       const questionAnswerId = getRandomInt(dataArray.length);
   
-      user.doc(localStorage.getItem('userId')).update({
-        round : 3
-      })
-      user.doc(localStorage.getItem('userId')).update({
-        r3q : dataArray[questionAnswerId]["question"],
-        r3a : dataArray[questionAnswerId]["answer"]
-      })
+      user.doc(localStorage.getItem('userId')).set({
+        r1q3 : dataArray[questionAnswerId]["question"],
+        r1a3 : dataArray[questionAnswerId]["answer"]
+      }, {merge : true})
       qst.innerHTML = dataArray[questionAnswerId]["question"];
   
-      document.getElementById("round-3").addEventListener("keyup", (e) => {
+      document.getElementById("round-1").addEventListener("keyup", (e) => {
         if (
           e.target.value.toLowerCase() ==
           dataArray[questionAnswerId]["answer"].toLowerCase()
@@ -40,16 +37,16 @@ function getRandomInt(max) {
       });
       document.getElementById("submit").addEventListener("click", (e) => {
         e.preventDefault();
-        var answer = document.getElementById("round-3").value;
+        var answer = document.getElementById("round-1").value;
         if (
           answer.toLowerCase() ==
           dataArray[questionAnswerId]["answer"].toLowerCase()
         ) {
           setTimeout(
             3000,
-            alert("Congratulations, you have completed the third round")
+            alert("Congratulations, you have completed the first round")
           );
-          window.location.replace("round3b.html");
+          window.location.replace("round2.html");
         } else {
           incorrect.innerHTML = "Incorrect answer";
         }
@@ -60,20 +57,20 @@ function getRandomInt(max) {
       const userSnapshot = await userRef.get();
       const userData = userSnapshot.data();
       
-      if (userData.round == 1) {
-        window.location.replace("index.html");
-      } else if (userData.round == 2) {
-        window.location.replace("round2.html")
+      if (userData.round == 2) {
+          window.location.href = "round2.html"
+      } else if (userData.round == 3) {
+          window.location.href = "round3.html"
       } else if (userData.round == 4) {
-        window.location.replace("round4.html");
+          window.location.href = "round4.html"
       }
       
-      qst.innerHTML = userData.r3q;
+      qst.innerHTML = userData.r1q3;
   
-      document.getElementById("round-3").addEventListener("keyup", (e) => {
+      document.getElementById("round-1").addEventListener("keyup", (e) => {
         if (
           e.target.value.toLowerCase() ==
-          userData.r3a.toLowerCase()
+          userData.r1a3.toLowerCase()
         ) {
           document.querySelector("#submit").style.display = "block";
         } else {
@@ -82,16 +79,16 @@ function getRandomInt(max) {
       });
       document.getElementById("submit").addEventListener("click", (e) => {
         e.preventDefault();
-        var answer = document.getElementById("round-3").value;
+        var answer = document.getElementById("round-1").value;
         if (
           answer.toLowerCase() ==
-          userData.r3a.toLowerCase()
+          userData.r1a3.toLowerCase()
         ) {
           setTimeout(
             3000,
-            alert("Congratulations, you have completed the third round")
+            alert("Congratulations, you have completed the first round")
           );
-          window.location.replace("round3b.html");
+          window.location.replace("round2.html");
         } else {
           incorrect.innerHTML = "Incorrect answer";
         }

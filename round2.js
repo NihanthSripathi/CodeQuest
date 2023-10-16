@@ -50,7 +50,7 @@ function getRandomInt(max) {
             3000,
             alert("Congratulations, you have completed the second round")
           );
-          window.location.replace("round3.html");
+          window.location.replace("round2b.html");
         } else {
           incorrect.innerHTML = "Incorrect answer";
         }
@@ -92,7 +92,7 @@ function getRandomInt(max) {
             3000,
             alert("Congratulations, you have completed the second round")
           );
-          window.location.replace("round3.html");
+          window.location.replace("round2b.html");
         } else {
           incorrect.innerHTML = "Incorrect answer";
         }

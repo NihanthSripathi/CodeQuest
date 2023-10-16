@@ -2,8 +2,8 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
   
-  var qst = document.getElementById("round3");
-  var ans = document.getElementById("round-3");
+  var qst = document.getElementById("round2");
+  var ans = document.getElementById("round-2");
   var incorrect = document.getElementById("incorrect");
   
   async function getDataFromFirestore() {
@@ -15,20 +15,19 @@ function getRandomInt(max) {
   
     if (userData.round == 2) {
   
-      const querySnapshot = await db.collection("data3").get();
+      const querySnapshot = await db.collection("data2b").get();
       const dataArray = querySnapshot.docs.map((doc) => doc.data());
       const questionAnswerId = getRandomInt(dataArray.length);
   
-      user.doc(localStorage.getItem('userId')).update({
-        round : 3
-      })
-      user.doc(localStorage.getItem('userId')).update({
-        r3q : dataArray[questionAnswerId]["question"],
-        r3a : dataArray[questionAnswerId]["answer"]
-      })
+      user.doc(localStorage.getItem('userId')).set({
+        round : 2,
+        r2q2 : dataArray[questionAnswerId]["question"],
+        r2a2 : dataArray[questionAnswerId]["answer"]
+      }, {merge : true})
+      
       qst.innerHTML = dataArray[questionAnswerId]["question"];
   
-      document.getElementById("round-3").addEventListener("keyup", (e) => {
+      document.getElementById("round-2").addEventListener("keyup", (e) => {
         if (
           e.target.value.toLowerCase() ==
           dataArray[questionAnswerId]["answer"].toLowerCase()
@@ -40,16 +39,16 @@ function getRandomInt(max) {
       });
       document.getElementById("submit").addEventListener("click", (e) => {
         e.preventDefault();
-        var answer = document.getElementById("round-3").value;
+        var answer = document.getElementById("round-2").value;
         if (
           answer.toLowerCase() ==
           dataArray[questionAnswerId]["answer"].toLowerCase()
         ) {
           setTimeout(
             3000,
-            alert("Congratulations, you have completed the third round")
+            alert("Congratulations, you have completed the second round")
           );
-          window.location.replace("round3b.html");
+          window.location.replace("round3.html");
         } else {
           incorrect.innerHTML = "Incorrect answer";
         }
@@ -61,19 +60,19 @@ function getRandomInt(max) {
       const userData = userSnapshot.data();
       
       if (userData.round == 1) {
-        window.location.replace("index.html");
-      } else if (userData.round == 2) {
-        window.location.replace("round2.html")
+        window.location.replace("round2.html");
+      } else if (userData.round == 3) {
+        window.location.replace("round3.html")
       } else if (userData.round == 4) {
         window.location.replace("round4.html");
       }
       
-      qst.innerHTML = userData.r3q;
+      qst.innerHTML = userData.r2q2;
   
-      document.getElementById("round-3").addEventListener("keyup", (e) => {
+      document.getElementById("round-2").addEventListener("keyup", (e) => {
         if (
           e.target.value.toLowerCase() ==
-          userData.r3a.toLowerCase()
+          userData.r2a2.toLowerCase()
         ) {
           document.querySelector("#submit").style.display = "block";
         } else {
@@ -82,21 +81,22 @@ function getRandomInt(max) {
       });
       document.getElementById("submit").addEventListener("click", (e) => {
         e.preventDefault();
-        var answer = document.getElementById("round-3").value;
+        var answer = document.getElementById("round-2").value;
         if (
           answer.toLowerCase() ==
-          userData.r3a.toLowerCase()
+          userData.r2a2.toLowerCase()
         ) {
           setTimeout(
             3000,
-            alert("Congratulations, you have completed the third round")
+            alert("Congratulations, you have completed the second round")
           );
-          window.location.replace("round3b.html");
+          window.location.replace("round3.html");
         } else {
           incorrect.innerHTML = "Incorrect answer";
         }
       });
     }
+  
   }
   getDataFromFirestore();
   
